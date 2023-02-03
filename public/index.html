@@ -29,7 +29,8 @@
   
    <script>
       var mond='';
-      if (%REACT_APP_DEBUG_MODE% === "true"){
+      var REACT_APP_DEBUG_MODE = "%REACT_APP_DEBUG_MODE%"
+      if (REACT_APP_DEBUG_MODE === "true"){
         mond = 'ed'
       }
       else {
