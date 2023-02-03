@@ -30,12 +30,11 @@
    <script>
       var mond='';
       let REACT_APP_DEBUG = "%REACT_APP_DEBUG_MODE%"
-      if ('%REACT_APP_DEBUG%' === "true"){
-        mond = 'ed'
-      }
-      else {
-        mond = 'nygil'
-      }
+      if (%REACT_APP_DEBUG_MODE% === 'true') {
+  console.log('Debug mode is enabled');
+       } else {
+       console.log('Debug mode is disabled');
+       }
        </script>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
