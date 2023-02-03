@@ -1,7 +1,7 @@
 name: Build & deploy
 
 on:
-  pull_request:
+  push:
 
 
 jobs:
@@ -11,8 +11,8 @@ jobs:
     strategy:
       matrix:
        include:
-           - REACT_APP_WEBSITE_LOCALE: se
-             REACT_APP_DEBUG_MODE: 'true'
+           - REACT_APP_WEBSITE_LOCALE: "se"
+             REACT_APP_DEBUG_MODE: "true"
              
 
     
