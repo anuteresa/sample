@@ -12,7 +12,7 @@ jobs:
       matrix:
        include:
            - REACT_APP_WEBSITE_LOCALE: "se"
-             REACT_APP_DEBUG_MODE: "false"
+             REACT_APP_DEBUG_MODE: "true"
              
 
     
