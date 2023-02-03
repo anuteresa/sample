@@ -30,7 +30,7 @@
    <script>
       var mond='';
      console.log(%REACT_APP_DEBUG_MODE%)
-      if (%REACT_APP_DEBUG_MODE% === 'true') {
+      if (process.env.REACT_APP_DEBUG_MODE === 'true') {
   console.log('Debug mode is enabled');
        } else {
        console.log('Debug mode is disabled');
