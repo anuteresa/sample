@@ -36,11 +36,11 @@ jobs:
           printenv REACT_APP_DEBUG_MODE
     - name: Check Debug Mode
       run: |
-           echo "REACT_APP_DEBUG_MODE value: $REACT_APP_DEBUG_MODE"
-           if [ "$REACT_APP_DEBUG_MODE" == "true" ]; then
-             echo "Debug mode is set to true"
-           else
-             echo "Debug mode is set to false"
-           fi  
+             echo "REACT_APP_DEBUG_MODE value: $REACT_APP_DEBUG_MODE"
+             if [ "$REACT_APP_DEBUG_MODE" == "true" ]; then
+                 echo "Debug mode is set to true"
+             else
+               echo "Debug mode is set to false"
+             fi 
 
     
