@@ -32,10 +32,15 @@ jobs:
       run: |
           touch .env
           echo REACT_APP_DEBUG_MODE=${{ matrix. REACT_APP_DEBUG_MODE }} >> .env
-          #export REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }}
-          export REACT_APP_DEBUG_MODE=$(grep REACT_APP_DEBUG_MODE .env | xargs)
-          echo "${REACT_APP_DEBUG_MODE}"
-          
+          export REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }}
+           if [ "${REACT_APP_DEBUG_MODE}" == "true" ]; then
+           echo "Debug mode is set to true"
+          else
+            echo "Debug mode is set to false"
+          fi 
+          # export REACT_APP_DEBUG_MODE=$(grep REACT_APP_DEBUG_MODE .env | xargs)
+           echo "${REACT_APP_DEBUG_MODE}"
+           
           printenv REACT_APP_DEBUG_MODE
     - name: Check Debug Mode
       run: |
