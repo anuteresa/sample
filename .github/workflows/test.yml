@@ -33,7 +33,8 @@ jobs:
           echo REACT_APP_WEBSITE_LOCALE=${{ matrix.REACT_APP_WEBSITE_LOCALE }} >> .env
           echo REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }} >> .env
           cat .env
-          if [ "¤REACT_APP_WEBSITE_LOCALE" == 'se' ]; then
+          echo $REACT_APP_DEBUG_MODE
+          if [ "$REACT_APP_WEBSITE_LOCALE" == 'se' ]; then
             echo "debug sucess"
           else
             echo "debug fail"
