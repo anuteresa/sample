@@ -32,6 +32,7 @@ jobs:
       run: |
           touch .env
           echo REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }} >> .env
+          export REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }}
           cat .env
     - name: Check Debug Mode
       run: |
