@@ -29,18 +29,16 @@ jobs:
       run: npm ci
       
     - name: Create env file and build
-
       run: |
           touch .env
           echo REACT_APP_WEBSITE_LOCALE=${{ matrix.REACT_APP_WEBSITE_LOCALE }} >> .env
           echo REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }} >> .env
- 
           cat .env
           if ["REACT_APP_DEBUG_MODE" == "true"]; then
             echo "debug sucess"
           else
-          echo "debug fail"
-         fi 
+            echo "debug fail"
+          fi 
  
        
     
