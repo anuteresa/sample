@@ -25,8 +25,7 @@ jobs:
       with:
         node-version: 12.x
     
-    - name: Install NPM packages
-      run: npm ci
+
       
     - name: Create env file and build
       run: |
@@ -34,7 +33,7 @@ jobs:
           echo REACT_APP_WEBSITE_LOCALE=${{ matrix.REACT_APP_WEBSITE_LOCALE }} >> .env
           echo REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }} >> .env
           cat .env
-          if [ "$REACT_APP_DEBUG_MODE" == 'true' ]; then
+          if [[ "$REACT_APP_DEBUG_MODE" == 'true' ]]; then
             echo "debug sucess"
           else
             echo "debug fail"
