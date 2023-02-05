@@ -1,0 +1,46 @@
+name: Build & deploy
+
+on:
+  pull_request:
+
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+       include:
+           - REACT_APP_WEBSITE_LOCALE: "se"
+             REACT_APP_DEBUG_MODE: 'true'
+             
+
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 12.x
+    
+    - name: Install NPM packages
+      run: npm ci
+      
+    - name: Create env file and build
+
+      run: |
+          touch .env
+          echo REACT_APP_WEBSITE_LOCALE=${{ matrix.REACT_APP_WEBSITE_LOCALE }} >> .env
+          echo REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }} >> .env
+ 
+          cat .env
+          if ["REACT_APP_DEBUG_MODE" == "true"]; then
+            echo "debug sucess"
+          else
+          echo "debug fail"
+         fi 
+ 
+       
+    
