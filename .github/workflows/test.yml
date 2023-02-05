@@ -33,7 +33,7 @@ jobs:
           touch .env
           echo REACT_APP_DEBUG_MODE=${{ matrix. REACT_APP_DEBUG_MODE }} >> .env
           echo "${REACT_APP_DEBUG_MODE}"
-          export REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }}
+          #export REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }}
           cat .env
           if [ "$REACT_APP_DEBUG_MODE" == "true" ]; then
            echo "Debug mode is set to true"
