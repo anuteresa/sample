@@ -9,10 +9,11 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     strategy:
+
       matrix:
        include:
-           - REACT_APP_WEBSITE_LOCALE: "se"
-             REACT_APP_DEBUG_MODE: true
+           - REACT_APP_DEBUG_MODE: true
+             
              
 
     
@@ -30,15 +31,14 @@ jobs:
     - name: Create env file and build
       run: |
           touch .env
-          echo REACT_APP_WEBSITE_LOCALE=${{ matrix.REACT_APP_WEBSITE_LOCALE }} >> .env
           echo REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }} >> .env
           cat .env
-          echo "$REACT_APP_DEBUG_MODE"
-          if [ "$REACT_APP_WEBSITE_LOCALE" == 'se' ]; then
-            echo "debug sucess"
-          else
-            echo "debug fail"
-          fi 
- 
+    - name: Check Debug Mode
+      run: |
+           if [ "$REACT_APP_DEBUG_MODE" == "true" ]; then
+             echo "Debug mode is set to true"
+           else
+             echo "Debug mode is set to false"
+           fi
        
     
