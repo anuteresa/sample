@@ -36,7 +36,7 @@ jobs:
           export REACT_APP_DEBUG_MODE=${{ matrix.REACT_APP_DEBUG_MODE }}
           echo "${REACT_APP_DEBUG_MODE}"
           cat .env
-          if [ '%$REACT_APP_DEBUG_MODE%' == 'true' ]; then
+          if [ '%$REACT_APP_DEBUG_MODE%' == "true" ]; then
            echo "Debug mode is set to true"
           else
             echo "Debug mode is set to false"
